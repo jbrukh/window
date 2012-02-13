@@ -1,0 +1,6 @@
+/output/
+!.gitignore
+.*
+/bin/
+_obj/
+*.6
