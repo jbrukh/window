@@ -9,7 +9,7 @@ package window
 // You can optimize the amount of slice copying
 // that the MovingWindow will be doing by trading
 // off with space complexity. Namely, the underlying
-// array is allocation with a size that is the
+// array is allocated with a size that is the
 // multiple of the intended capacity of the queue
 // so that copying is less frequent.
 type MovingWindow struct {
@@ -19,7 +19,7 @@ type MovingWindow struct {
     tail int
 }
 
-// PushBack will push a new piece of data onto
+// PushBack will push a new piece of data into
 // the moving window
 func (m *MovingWindow) PushBack(v float64) {
     // if the array is full, rewind
