@@ -11,7 +11,7 @@ license.
 This code has no dependencies besides the standard Go installation. You
 can install simply by running:
 
-  $ build install
+    $ build install
 
 Please read the Go documentation about setting the $GOPATH.
 
