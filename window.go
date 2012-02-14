@@ -47,10 +47,10 @@ func (m *MovingWindow) rewind() {
     m.head, m.tail = 0, m.size-1
 }
 
-// ToSlice will present the MovingWindow in
+// Slice will present the MovingWindow in
 // the form of a slice. This operation never
 // requires array copying of any kind.
-func (m *MovingWindow) ToSlice() []float64 {
+func (m *MovingWindow) Slice() []float64 {
     return m.arr[m.head:m.tail]
 }
 
