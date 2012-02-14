@@ -70,8 +70,8 @@ func (m *MovingWindow) Size() int {
 // array copying is proportional to approx 1/M,
 // where M is the multiple.
 func New(size, multiple int) *MovingWindow {
-    if size < 1 {
-        panic("Must have positive size")
+    if size < 1 || multiple < 1{
+        panic("Must have positive size and multiple")
     }
     capacity := size*multiple
     return &MovingWindow{
