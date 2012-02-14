@@ -17,6 +17,10 @@ You can then use the 'go' command to obtain the package:
     $ go get github.com/jbrukh/window
     $ go install -v github.com/jbrukh/widnow
 
+To run the benchmarks:
+
+    $ go test -c && window.test -test.bench=".*"
+
 ### Documentation
 
 See the comments in the codebase.
