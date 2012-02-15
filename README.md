@@ -19,7 +19,7 @@ You can then use the 'go' command to obtain the package:
 
 To run the benchmarks:
 
-    $ go test -c && window.test -test.bench=".*"
+    $ go test -test.bench=".*"
 
 ### Documentation
 
@@ -29,10 +29,14 @@ See the comments in the codebase.
 
 Here are some benchmarks:
 
-    BenchmarkListS1000         1   42649824000 ns/op
-    BenchmarkS1000M1           1    2707254000 ns/op
-    BenchmarkS1000M10        100      10864690 ns/op
-    BenchmarkS1000M100       100      10774190 ns/op
-    BenchmarkS1000M500       100      11953970 ns/op
+     BenchmarkListS1000             10         188497800 ns/op
+     BenchmarkRingS1000             50          35760520 ns/op
+     BenchmarkS1000M1                1        2817453000 ns/op
+     BenchmarkS1000M10             200           9012795 ns/op
+     BenchmarkS1000M100            200           8807370 ns/op
+     BenchmarkS1000M500            200           8471190 ns/op
+     BenchmarkSlicifyList        50000             41656 ns/op
+     BenchmarkSlicifyRing        50000             48598 ns/op
+     BenchmarkSlicifyWindow  200000000              9.30 ns/op
 
-The first test is running 1,000,000 data points through a 1000-point moving window implemented with a list. On each insert, a slice is generated. The subsequent tests run the same number of data points through a moving window with different size and M combinations (as above). On each insert, a slice is generated as well. See `window_test.go` for details.
+The first set of benchmarks measures the time it takes for 1,000,000 points to go through a size 1000 list-based moving window, ring-based moving window, and a MovingWindow under different values of its space parameter M. The later test measures how long it takes to convert the moving windows into a slice, a common operation.
