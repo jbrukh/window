@@ -50,6 +50,11 @@ func (m *MovingWindow) rewind() {
 // Slice will present the MovingWindow in
 // the form of a slice. This operation never
 // requires array copying of any kind.
+//
+// Note that this value is guaranteed to be
+// good only until the next call to push. If
+// you wish to save the reference, you should
+// make a copy.
 func (m *MovingWindow) Slice() []float64 {
     return m.arr[m.head:m.tail]
 }
