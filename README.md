@@ -15,7 +15,7 @@ You need at least the following weekly version of Go:
 You can then use the 'go' command to obtain the package:
 
     $ go get github.com/jbrukh/window
-    $ go install -v github.com/jbrukh/widnow
+    $ go install -v github.com/jbrukh/window
 
 To run the benchmarks:
 
